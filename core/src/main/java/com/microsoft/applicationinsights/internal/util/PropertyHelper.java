@@ -45,6 +45,9 @@ public final class PropertyHelper {
     {
         Properties props = new Properties();
         ClassLoader classLoader = PropertyHelper.class.getClassLoader();
+        if (classLoader == null) {
+            classLoader = ClassLoader.getSystemClassLoader();
+        }
 
         // Look in the class loader's default location.
         InputStream inputStream = classLoader.getResourceAsStream(name);
