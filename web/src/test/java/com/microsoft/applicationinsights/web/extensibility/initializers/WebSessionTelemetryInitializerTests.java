@@ -78,6 +78,6 @@ public class WebSessionTelemetryInitializerTests {
         sessionTelemetryInitializer.onInitializeTelemetry(telemetry);
 
         Assert.assertNull(telemetry.getContext().getSession().getId());
-        Assert.assertFalse(telemetry.getContext().getSession().getIsFirst());
+        Assert.assertNull(telemetry.getContext().getSession().getIsFirst());
     }
 }
