@@ -180,7 +180,9 @@ public class ExceptionData extends Domain
         writer.write("severityLevel", severityLevel);
         writer.write("problemId", problemId, 1024);
         writer.write("properties", properties);
-        writer.write("measurements", measurements);
+        if (measurements != null && !measurements.isEmpty()) {
+            writer.write("measurements", measurements);
+        }
     }
     
     /**
